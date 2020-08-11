@@ -1,0 +1,2 @@
+# RoR
+Herencia en ruby
