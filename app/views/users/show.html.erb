@@ -1,0 +1,97 @@
+<div class="dashboard-content">	
+  <div class="row align-items-center mt-devices">
+    <h3 class="admintitle">Mi Cuenta</h3>
+
+    <%= link_to edit_user_registration_path(@user), method: :get, class: 'btn btn-sm fs12 btn-secondary pull-right' do %>
+      Editar mi cuenta
+    <% end %>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <h4 class="mbn">Mis Mascotas</h4>
+
+      <%= link_to new_user_pet_path(@user), method: :get, class: 'btn btn-sm btn-primary fs12 pull-right mtn10' do %>
+        Nueva Mascota
+      <% end %>
+    </div>
+
+    <div class="col-sm-12 mt10">
+      <table class="table table-striped table-hover table-sm">
+        <thead>
+            <tr>
+              <th><%= t('activerecord.attributes.pet.name') %></th>
+              <th><%= t('activerecord.attributes.pet.age') %></th>
+              <th><%= t('activerecord.attributes.pet.kind_of_pet') %></th>
+              <th><%= t('activerecord.attributes.pet.weight') %></th>
+              <th><%= t('activerecord.attributes.pet.gender') %></th>
+              <th colspan="2"></th>
+            </tr>
+        </thead>
+        <tbody>
+          <% @pets.each do |pet| %>
+            <tr>
+              <td><%= pet.name %></td>
+              <td><%= pet.age %></td>
+              <td><%= enum_kind(pet.kind_of_pet) %></td>
+              <td><%= pet.weight %></td>
+              <td><%= enum_gender(pet.gender) %></td>
+              <td colspan="2">
+                <%= link_to edit_user_pet_path(@user, pet), class:'', method: :get do %>
+                  <i class="fa fa-pencil fs24 ph8"></i>
+                <% end %>
+
+                <%= link_to [@user, pet], class:'', method: :delete, data: { confirm: t('messages.are_you_sure') }  do %>
+                  <i class="fa fa-trash fs24 ph8"></i>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>     
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="row mt20">
+    <div class="col-sm-12">
+      <h4 class="mbn">Mis Pedidos</h4>
+
+      <% unless current_user.orders.draft.present? %>
+        <%= link_to user_quotes_path(@user), method: :get, class: 'btn btn-sm btn-primary fs12 pull-right mtn10' do %>
+          Nuevo Pedido
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="col-sm-12 mt10">
+      <table class="table table-striped table-hover table-sm">
+        <thead>
+            <tr>
+              <th><%= t('activerecord.attributes.order.price') %></th>
+              <th><%= t('activerecord.attributes.order.comment') %></th>
+              <th><%= t('activerecord.attributes.order.delivery_date') %></th>
+              <th><%= t('activerecord.attributes.order.address') %></th>
+              <th colspan="2"></th>
+            </tr>
+        </thead>
+        <tbody>
+          <% @orders.each do |order| %>
+            <tr>
+              <td><%= order.price %></td>
+              <td><%= order.comment %></td>
+              <td><%= order.delivery_date %></td>
+              <td><%= order.address %></td>
+              <td colspan="2">
+                <% if order.draft? %>
+                  <%= link_to [current_user, order], class:'btn-sm btn btn-secondary fs12 pull-right mtn', method: :get do %>
+                    Finalizar Pedido!
+                  <% end %>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>                    
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

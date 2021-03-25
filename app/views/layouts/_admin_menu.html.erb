@@ -1,0 +1,49 @@
+<li class="nav-item dropdown">
+	<%= content_tag :div, class: 'nav-link dropdown-toggle text-white', id:'services-dropdown', :'data-toggle' => 'dropdown' do %>
+		<i class="fa fa-cogs fs26"></i>
+	<% end %>
+								
+	<div class="dropdown-menu" aria-labelledby="services-dropdown">
+		<%= link_to users_path, class: 'dropdown-item', method: :get do %>
+			Panel de control
+		<% end %>
+
+		<%= link_to customers_path, class: 'dropdown-item', method: :get do %>
+			Clientes
+		<% end %>
+
+		<%= link_to leeds_path, class: 'dropdown-item', method: :get do %>
+			Prospectos
+		<% end %>
+
+		<%= link_to brands_path, class: 'dropdown-item', method: :get do %>
+			Marcas
+		<% end %>
+
+		<%= link_to contacts_path, class: 'dropdown-item', method: :get do %>
+			Contactos
+		<% end %>
+
+		<%= link_to newsletters_path, class: 'dropdown-item', method: :get do %>
+			Mis Noticias
+		<% end %>
+
+		<%= link_to purchases_path, class: 'dropdown-item', method: :get do %>
+			Mis Pedidos
+		<% end %>
+
+		<%= link_to suggestions_path, class:'dropdown-item', method: :get do %>
+			Mis PQRS
+		<% end %> 
+
+		<%= link_to edit_user_registration_path(current_user), class:'dropdown-item', method: :get do %>
+			Actualizar Admin
+		<% end %>
+	</div>
+</li>
+
+<li class="nav-item <%= devise_active? %>">
+	<%= link_to destroy_user_session_path, class:'nav-link', method: :get do %>
+		<i class="fa fa-sign-out fs22"></i>
+	<% end %>                   
+</li>

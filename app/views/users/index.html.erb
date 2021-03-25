@@ -1,0 +1,76 @@
+<div class="responsive-content">
+	<div class="dashboard-content">	
+		<h3 class="admintitle">Panel de control</h3>
+
+		<div class="row">
+			<div class="col-lg-3 col-md-6 ph3">
+				<div class="dashboard-stat color-1">
+					<div class="dashboard-stat-content"><h4><%= @orders.size %></h4> <span>Pedidos</span></div>
+					<div class="dashboard-stat-icon"><i class="glyph-icon flaticon-dog-18"></i></div>
+				</div>
+			</div>
+
+			<div class="col-lg-3 col-md-6 ph3">
+				<div class="dashboard-stat color-3">
+					<div class="dashboard-stat-content"><h4><%= @leeds.size %></h4> <span>Prospectos</span></div>
+					<div class="dashboard-stat-icon"><i class="glyph-icon flaticon-animals-2"></i></div>
+				</div>
+			</div>
+
+			<div class="col-lg-3 col-md-6 ph3">
+				<div class="dashboard-stat color-4">
+					<div class="dashboard-stat-content"><h4><%= @customers.size %></h4> <span>Clientes</span></div>
+					<div class="dashboard-stat-icon"><i class="glyph-icon flaticon-animals-11"></i></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-6 col-md-12 ph3" style="overflow-x: auto;">
+				<h4>Pedidos Recientes</h4>
+				<table class="table table-striped table-hover table-sm">
+					<thead>
+							<tr>
+								<th>Fecha</th>
+								<th>Valor</th>
+								<th>Estado</th>
+								<th>Dirección</th>
+							</tr>
+					</thead>
+					<tbody>
+						<% @orders.each do |order| %>
+							<tr>
+								<td><%= order.delivery_date %></td>
+								<td>$<%= number_with_precision(order.price, precision: 0, delimiter: '.') %> COP</td>
+								<td><%= order.status %></td>
+								<td><%= order.address %></td>
+							</tr>
+						<% end %>                    
+					</tbody>
+				</table>
+			</div>
+
+			<div class="col-lg-6 col-md-12 ph3" style="overflow-x: auto;">
+				<h4>Clientes Recientes</h4>
+				<table class="table table-striped table-hover table-sm">
+					<thead>
+							<tr>
+								<th>Nombre</th>
+								<th>Email</th>
+								<th>Teléfono</th>
+							</tr>
+					</thead>
+					<tbody>
+						<% @recents.each do |user| %>
+							<tr>
+								<td><%= user.name %></td>
+								<td><%= user.email %></td>
+								<td><%= user.phone %></td>
+							</tr>
+						<% end %>                   
+					</tbody>
+				</table>
+			</div>			
+		</div>
+	</div>
+</div>

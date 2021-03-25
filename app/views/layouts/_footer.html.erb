@@ -1,0 +1,76 @@
+<footer class="text-light">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6">
+				<%= link_to home_path, class:'navbar-brand' do %>
+					<%= image_tag 'LogoBigPet2.png', class:'logo', size:'130' %>
+				<% end %>
+				<p class="mt-3">Con BigPet puedes adquirir una mensualidad y te entregamos la comida de tú mascota en la puerta de tú casa.</p>
+			</div>
+
+			<div class="col-lg-3">&nbsp;</div>
+
+			<div class="col-lg-3">
+				<h6><i class="fas fa-envelope margin-icon"></i>Contacto</h6>
+				<ul class="list-unstyled mn">
+					<li>Correo: bigpetco@gmail.com</li>
+					<li>Teléfono: 3208381132</li>
+				</ul>
+
+				<ul class="social-media">
+					<li>
+						<%= link_to 'https://www.facebook.com/bigpetco.sas.1', target:'_blank' do %>
+							<i class="fa fa-facebook-square fs26 txt-white"></i>
+						<% end %>
+					</li>
+					<li>
+						<%= link_to 'https://www.instagram.com/bigpetco/', target:'_blank' do %>
+							<i class="fa fa-instagram fs26 txt-white"></i>
+						<% end %>
+					</li>
+					<li>
+						<%= link_to 'https://twitter.com/bigpetco', target:'_blank' do %>
+							<i class="fa fa-twitter fs26 txt-white"></i>
+						<% end %>
+					</li>
+					<li>
+						<%= link_to 'https://www.youtube.com/channel/UC_cLCSbgWuKkUudKsBJFy5A/featured?view_as=subscriber', target:'_blank' do %>
+							<i class="fa fa-youtube fs22 txt-white"></i>
+						<% end %>
+					</li>
+
+					<li>
+						<% link_to 'tiktok', 'https://www.tiktok.com/@bigpetcosas', target:'_blank', class:'txt-white fs16 mtn20 pb20' %>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="credits col-sm-12">
+				<p>© 2020 BigPet. All Rights Reserved.</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="page-scroll hidden-sm hidden-xs">
+		<a href="#top" class="back-to-top" id="btn-top-body"><i class="fa fa-angle-up"></i></a>
+	</div>
+</footer>
+
+<!-- Bootstrap core & Jquery -->      
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<!-- Custom Js -->
+<%= javascript_pack_tag 'custom' %>
+<%= javascript_pack_tag 'plugins' %>
+
+<!-- GreenSock -->
+<%= javascript_pack_tag 'greensock' %>
+    
+<!-- LayerSlider script files -->
+<%= javascript_pack_tag 'layerslidertransitions' %>
+<%= javascript_pack_tag 'layersliderkreaturamediajquery' %>
+<%= javascript_pack_tag 'layersliderload' %>      

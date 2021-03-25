@@ -1,0 +1,44 @@
+<div class="row bg-light-custom border-irregular1 block-padding p20">
+  <div class="col-lg-12 col-md-12 profileform">
+    <div class="form-group">
+      <%= form_with(model: [@user, @pet], local: true, html: { class:'login' }) do |f| %>
+        <% if @pet.errors.any? %>
+          <%= render 'layouts/error_messages', resource: @pet %>
+        <% end %>
+
+        <div class="row">
+          <div class="col-md-6">
+            <label><%= t('activerecord.attributes.pet.name') %> <span class="required">*</span></label>
+            <%= f.text_field :name, class: 'form-control input-field', required: true, autofocus: true %>
+          </div>
+
+          <div class="col-md-6">
+            <label><%= t('activerecord.attributes.pet.age') %> <span class="required">*</span></label>
+            <%= f.number_field :age, class: 'form-control input-field', required: true %>
+          </div>
+
+          <div class="col-md-6">
+            <label><%= t('activerecord.attributes.pet.kind_of_pet') %>: </label>
+            <%= f.select(:kind_of_pet, options_for_select(kind_of_pets.map{ |key, value| [value, key]}, @pet.kind_of_pet), { }, { class: 'form-control input-field' }) %> 		                          
+          </div>
+
+          <div class="col-md-6">
+            <label><%= t('activerecord.attributes.pet.gender') %>: </label>
+            <%= f.select(:gender, options_for_select(genders.map{ |key, value| [value, key]}, @pet.gender), { }, { class: 'form-control input-field' }) %> 		                          
+          </div>
+
+          <div class="col-md-6">
+            <label><%= t('activerecord.attributes.pet.weight') %> <span class="required">*</span></label>
+            <%= f.number_field :weight, class: 'form-control input-field', required: true %>
+          </div>
+        </div>
+
+        <div class="row mt20">
+          <div class="col-md-12">
+            <%= f.submit btn_title, class: 'btn btn-primary mt30 pull-right' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

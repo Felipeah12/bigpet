@@ -1,0 +1,81 @@
+// Init functions
+@function pass_to_percentage($number){
+  @return $number*1%;
+}
+
+@function pass_to_px($number){
+  @return $number*1px;
+}
+
+@function pass_to_ms($number){
+  @return $number*1ms;
+}
+
+// Init variables
+$z-max: 999999 !important;
+$z-med-l: 99999 !important;
+$z-med: 9991 !important;
+$z-low: 10 !important;
+$txt-s: 1px 3px 4px;
+
+// colors
+$white: white;
+$dark-blue: rgba(34, 83, 120, 1);
+$dark-blue2: rgba(2, 55,  90, 1);
+$green-blue: rgba(21, 149, 163, 1);
+$light-blue: rgba(172, 240, 242, 1);
+$light-grey: rgb(238, 238, 238);
+$grey: rgba(115, 113, 113, 1);
+$orange: rgba(209, 70, 46, 1);
+$light-orange: rgba(240, 114, 36, 1);
+$black: rgba(0, 0, 0, 0.8);
+$dali: rgba(112, 168, 54, 0.3);
+$deeporange: rgba(255, 107, 34, 1);
+
+// Text shadow 
+$txt-shadow-l: $txt-s rgba(250, 250, 250, 0.8);
+$txt-shadow-l1: $txt-s rgba(230, 230, 230, 0.8);
+$txt-shadow-l2: $txt-s rgba(200, 200, 200, 0.8);
+$txt-shadow-l3: $txt-s rgba(150, 150, 150, 0.8);
+$txt-shadow-l4: $txt-s rgba(100, 100, 100, 0.8);
+
+// Transitions
+$tran-8s: all .8s ease-in;
+
+// Numeric variables
+$one: 1;
+$two: 2;
+$three: 3;
+$four: 4;
+$five: 5;
+$six: 6;
+$eight: 8;
+$ten: 10;
+$twenty: 20;
+$thirty: 30;
+$forty: 40;
+$fifty: 50;
+$sixty: 60;
+$one_hundred: 100;
+$two_hundred: 200;
+$three_hundred: 300;
+$five_hundred: 500;
+$one_thousand: 1000;
+
+// px numeric variables
+$two_p: 2px;
+$three_p: 3px;
+$four_p: 4px;
+$five_p: 5px;
+$ten_p: 10px;
+$twenty_p: 20px;
+$thirty_p: 30px;
+$forty_p: 40px;
+$fifty_p: 50px;
+$sixty_p: 60px;
+$eighty_p: 80px;
+$one_hundred_p: 100px;
+$two_hundred_p: 200px;
+$three_hundred_p: 300px;
+$five_hundred_p: 500px;
+$one_thousand_p: 1000px;

@@ -1,0 +1,11 @@
+<li class="nav-item dropdown">
+  <%= link_to current_user, class:'dropdown-item', method: :get do %>
+    <div class="pt3">Mi cuenta</div>
+  <% end %>
+</li>
+
+<li class="nav-item <%= devise_active? %>">
+  <%= link_to destroy_user_session_path, class:'nav-link', method: :get do %>
+    <i class="fa fa-sign-out fs22"></i>
+  <% end %>                   
+</li>

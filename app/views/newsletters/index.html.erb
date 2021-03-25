@@ -1,0 +1,60 @@
+<div class="dashboard-content">			
+  <div class="row align-items-center mt-devices">
+    <div class="col-lg-10">
+      <h2 class="admintitle">Noticias</h2>
+    </div>
+
+    <div class="col-lg-2">
+      <%= link_to new_newsletter_path, class: 'btn btn-primary btn-sm pull-right', method: :get do %>
+        Nueva Noticia
+      <% end %>	
+    </div>
+  </div>
+
+  <div class="row">			
+    <div class="col-lg-12 col-md-12" style="overflow-x:auto;">
+      <table class="table table-striped table-hover table-sm">
+        <thead>
+          <tr>
+            <th><%= t('activerecord.attributes.newsletter.image') %></th>
+            <th><%= t('activerecord.attributes.newsletter.title') %></th>
+            <th><%= t('activerecord.attributes.newsletter.content') %></th>
+            <th><%= t('activerecord.attributes.newsletter.status') %></th>
+            <th colspan="2"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @newsletters.each do |newsletter| %>
+            <% if newsletter.published? %>
+              <% text = t('activerecord.attributes.newsletter.published') %>
+            <% else %>
+              <% text = t('activerecord.attributes.newsletter.unpublished') %>
+            <% end %>
+            <tr>
+              <td>
+                <%= image_tag newsletter.image, class: 'imagebrandlistcrud m10', alt: newsletter.title %>
+              </td>
+              <td><%= newsletter.title %></td>
+              <td><%= truncate(newsletter.content, length: 70, separator: ' ') %></td>
+              <td><%= text %></td>
+
+              <td colspan="2">
+                <%= link_to newsletter, class:'', method: :get do %>
+                  <i class="fa fa-arrow-circle-right fs24 ph3"></i>
+                <% end %>
+
+                <%= link_to edit_newsletter_path(newsletter), class:'', method: :get do %>
+                  <i class="fa fa-pencil fs24 ph3"></i>
+                <% end %>
+
+                <%= link_to newsletter, class:'', method: :delete, data: { confirm: t('messages.are_you_sure_news') }  do %>
+                  <i class="fa fa-newspaper-o fs24 ph3 <%= 'color-green' if newsletter.published? %>"></i>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>				                   
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

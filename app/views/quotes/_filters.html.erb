@@ -1,0 +1,126 @@
+<div class="row mw-device mauto">
+  <button class="collapsible">Filtrar</button>
+
+  <div class="content-filters">
+    <div class="form-group device-form">
+      <div class="row">
+        <%= form_with(url: user_quotes_path(current_user), local: true, method: :get, class:'w100 pb10') do |form| %>
+          <div class="d-flex justify-content-left">
+            <h5 class="pull-left fs18-md ph10 mbn">Tipo: </h5>
+
+            <div class="custom-control custom-radio ph5">
+              <%= radio_button_tag :kind, :little_cat, false, class:'radio-kind' %>
+              <%= label_tag :kind_little_cat, I18n.t('kind_of_pet.little_cat'), class: 'ph5 mtn10 fs12-md' %>
+            </div>
+
+            <div class="custom-control custom-radio ph5">
+              <%= radio_button_tag :kind, :little_dog, false, class:'radio-kind' %>
+              <%= label_tag :kind_little_dog, I18n.t('kind_of_pet.little_dog'), class: 'ph5 mtn10 fs12-md' %>
+            </div>
+
+            <div class="custom-control custom-radio ph5">
+              <%= radio_button_tag :kind, :cat, false, class:'radio-kind' %>
+              <%= label_tag :kind_cat, I18n.t('kind_of_pet.cat'), class: 'ph5 mtn10 fs12-md' %>
+            </div>
+
+            <div class="custom-control custom-radio ph5">
+              <%= radio_button_tag :kind, :dog, false, class:'radio-kind' %>
+              <%= label_tag :kind_dog, I18n.t('kind_of_pet.dog'), class: 'ph5 mtn10 fs12-md' %>
+            </div>
+          </div>
+        
+          <div class="d-flex justify-content-left">
+            <h5 class="pull-left fs18-md ph10 mbn">Tamaño: </h5>
+
+            <div class="custom-control custom-radio ph5">
+              <%= radio_button_tag :size, :thumb, false, class:'radio-size' %>
+              <%= label_tag :size_thumb, I18n.t('size_type.thumb'), class: 'ph5 mtn10 fs12-md' %>
+            </div>
+
+            <div class="custom-control custom-radio ph5">
+              <%= radio_button_tag :size, :small, false, class:'radio-size' %>
+              <%= label_tag :size_small, I18n.t('size_type.small'), class: 'ph5 mtn10 fs12-md' %>
+            </div>
+
+            <div class="custom-control custom-radio ph5">
+              <%= radio_button_tag :size, :medium, false, class:'radio-size' %>
+              <%= label_tag :size_medium, I18n.t('size_type.medium'), class: 'ph5 mtn10 fs12-md' %>
+            </div>
+
+            <div class="custom-control custom-radio ph5">
+              <%= radio_button_tag :size, :standard, false, class:'radio-size' %>
+              <%= label_tag :size_standard, I18n.t('size_type.standard'), class: 'ph5 mtn10 fs12-md' %>
+            </div>
+
+            <div class="custom-control custom-radio ph5">
+              <%= radio_button_tag :size, :big, false, class:'radio-size' %>
+              <%= label_tag :size_big, I18n.t('size_type.big'), class: 'ph5 mtn10 fs12-md' %>
+            </div>
+
+            <div class="custom-control custom-radio ph5">
+              <%= radio_button_tag :size, :giant, false, class:'radio-size' %>
+              <%= label_tag :size_giant, I18n.t('size_type.giant'), class: 'ph5 mtn10 fs12-md' %>
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-left">
+            <h5 class="pull-left fs18-md ph10 mbn">Peso Kgs: </h5>
+
+            <div class="custom-control custom-radio ph5">
+              <%= radio_button_tag :weight, 10, false, class:'radio-weight' %>
+              <%= label_tag :weight_10, '0-10', class: 'ph5 mtn10 fs12-md' %>
+            </div>
+
+            <div class="custom-control custom-radio ph5">
+              <%= radio_button_tag :weight, 20, false, class:'radio-weight' %>
+              <%= label_tag :weight_20, '10-20', class: 'ph5 mtn10 fs12-md' %>
+            </div>
+
+            <div class="custom-control custom-radio ph5">
+              <%= radio_button_tag :weight, 30, false, class:'radio-weight' %>
+              <%= label_tag :weight_30, '20-30', class: 'ph5 mtn10 fs12-md' %>
+            </div>
+
+            <div class="custom-control custom-radio ph5">
+              <%= radio_button_tag :weight, 40, false, class:'radio-weight' %>
+              <%= label_tag :weight_40, '30-40', class: 'ph5 mtn10 fs12-md' %>
+            </div>
+
+            <div class="custom-control custom-radio ph5">
+              <%= radio_button_tag :weight, 50, false, class:'radio-weight' %>
+              <%= label_tag :weight_50, '40-50', class: 'ph5 mtn10 fs12-md' %>
+            </div>
+
+            <div class="custom-control custom-radio ph5">
+              <%= radio_button_tag :weight, 60, false, class:'radio-weight' %>
+              <%= label_tag :weight_60, '50-60', class: 'ph5 mtn10 fs12-md' %>
+            </div>
+
+            <div class="custom-control custom-radio ph5">
+              <%= radio_button_tag :weight, 70, false, class:'radio-weight' %>
+              <%= label_tag :weight_70, '60-70', class: 'ph5 mtn10 fs12-md' %>
+            </div>
+
+            <div class="custom-control custom-radio ph5">
+              <%= radio_button_tag :weight, 80, false, class:'radio-weight' %>
+              <%= label_tag :weight_80, '70-80', class: 'ph5 mtn10 fs12-md' %>
+            </div>
+
+            <div class="custom-control custom-radio ph5">
+              <%= radio_button_tag :weight, 90, false, class:'radio-weight' %>
+              <%= label_tag :weight_90, '80-90', class: 'ph5 mtn10 fs12-md' %>
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-right">
+            <div class="w100">
+              <%= button_tag :submit, class: 'btn-sm btn btn-secondary pull-btn-collapsible' do %>
+                <%= t('btn.apply') %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

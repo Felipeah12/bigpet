@@ -1,0 +1,132 @@
+<section id="about" class="dog-bg2">
+   <div class="container">
+      <div class="section-heading text-center">
+         <h2>Conócenos</h2>
+      </div>
+      <!-- /Section-heading -->
+   </div>
+   <!-- /container -->
+   <div class="container block-padding pt-0">
+      <div class="row">
+         <div class="col-lg-6">
+            <h3>Nacimos por tus mascotas</h3>
+            <p>Despreocupate no tienes que volver a a comprar todos los meses la comida para tú mascota, con nuestros planes escoges una vez lo que deseas y todos los meses te garantizamos que te entregamos la entrega de la comida de tú mascota en la pueta de tú casa, mas facil, mas comodo, mas tiempo para que disfrutes a tú mascota.</p>
+            <!-- ul custom-->
+            <ul class="custom pl-0">
+               <li>Las marcas que ya conoces.</li>
+               <li>Al mejor precio.</li>
+               <li>En la puerta de tú casa.</li>
+            </ul>
+            <!-- /ul -->
+         </div>
+         <!-- image -->
+         <div class="col-lg-6">
+               <%= image_tag 'dog.jpg', class: 'img-fluid border-irregular1'  %>
+         </div>
+      </div>
+      <!-- /row -->
+   </div>
+   <!-- /container -->         
+   <!-- /block-padding -->
+   <div class="container bottom-block-padding">
+      <h3 class="text-center">Esto opinan nuestros clientes</h3>
+      <div class="col-md-12">
+         <div id="owl-testimonial" class="owl-carousel owl-theme">
+            <!-- testimonial -->
+            <div class="testimonial">
+               <div class="content">
+                  <p class="description">
+                     Aliquam erat volutpat In id fermentum augue, ut pellentesque leo. Maecenas at arcu risus. Donec commodo sodales ex, scelerisque laoreet nibh hendrerit id. In aliquet magna nec lobortis maximus. Etiam rhoncus leo a dolor placerat, nec elementum ipsum convall.                        
+                  </p>
+               </div>
+               <!-- /content -->
+               <div class="testimonial-pic">
+                  <%= image_tag 'user1.jpg', class: 'img-fluid'  %>
+               </div>
+               <!-- /testimonial-pic -->
+               <div class="testimonial-review">
+                  <h5 class="testimonial-title">Juan Rodriguez</h5>
+                  <span>Papa Lukas</span>
+               </div>
+               <!-- /testimonial-review -->
+            </div>
+            <!-- /testimonial -->
+            <!-- testimonial -->
+            <div class="testimonial">
+               <div class="content">
+                  <p class="description">
+                     Aliquam erat volutpat In id fermentum augue, ut pellentesque leo. Maecenas at arcu risus. Donec commodo sodales ex, scelerisque laoreet nibh hendrerit id. In aliquet magna nec lobortis maximus. Etiam rhoncus leo a dolor placerat, nec elementum ipsum convall.                        
+                  </p>
+               </div>
+               <!-- /content -->
+               <div class="testimonial-pic">
+                  <%= image_tag 'user2.jpg', class: 'img-fluid'  %>
+               </div>
+               <!-- /testimonial-pic -->
+               <div class="testimonial-review">
+                  <h5 class="testimonial-title">Catalina Soto</h5>
+                  <span>Mama Firulais</span>
+               </div>
+               <!-- /testimonial-review -->
+            </div>
+            <!-- /testimonial -->
+            <!-- testimonial -->
+            <div class="testimonial">
+               <div class="content">
+                  <p class="description">
+                     Aliquam erat volutpat In id fermentum augue, ut pellentesque leo. Maecenas at arcu risus. Donec commodo sodales ex, scelerisque laoreet nibh hendrerit id. In aliquet magna nec lobortis maximus. Etiam rhoncus leo a dolor placerat, nec elementum ipsum convall.                        
+                  </p>
+               </div>
+               <!-- /content -->
+               <div class="testimonial-pic">
+                  <%= image_tag 'user3.jpg', class: 'img-fluid'  %>
+               </div>
+               <!-- /testimonial-pic -->
+               <div class="testimonial-review">
+                  <h5 class="testimonial-title">Karen Lopez</h5>
+                  <span>Mama Chimuleo</span>
+               </div>
+               <!-- /testimonial-review -->
+            </div>
+            <!-- /testimonial -->
+         </div>
+         <!-- /owl-testimonial -->
+      </div>
+      <!-- /col-md-12 -->
+   </div>
+   <!-- /container -->
+</section>
+<!-- / Section Ends -->  
+
+
+<!-- Section Blurb -->
+<section id="blurb" class="bg-primary text-light">
+   <div class="container">
+      <div class="row">
+         <div class="col-xl-8">
+            <!-- image  -->
+            <%= image_tag 'cat1.png', class: 'img-fluid blurb-img'  %>
+            <img src="img/blurbimg.png" class="img-fluid blurb-img" alt="" />
+         </div>
+         <div class="col-xl-4" data-aos="fade-down" >
+            <h2 class="res-margin">Adquiere Tú Plan</h2>
+            <p class="featured-text">
+               Encuentra el plan perfecto para tú mascota.<br>
+               Nos adaptamos a tus necesidades y las de tú mascota escoge la marca que mas quieres al mejor precio y en la puerta de tú casa.
+            </p>
+            <!-- button -->
+            <%= link_to plan_choosepet_path, class: 'btn btn-primary' ,  method: :get do %>
+               Ver Planes
+            <% end %>
+         </div>
+         <!-- /col-lg -->
+      </div>
+      <!-- /row -->
+   </div>
+   <!-- /container -->
+</section>
+<!-- SVG effect -->
+<svg id="bigTriangleColor" class="d-none d-sm-block" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 100 102" preserveAspectRatio="none">
+   <path d="M0 0 L50 100 L100 0 Z" />
+</svg>
+<!-- / Section Ends -->

@@ -1,0 +1,54 @@
+<div id="preloader">
+	<div class="spinner">
+		<div class="bounce12">
+			<%= image_tag 'log.png', class: 'spinnerlogo'  %>
+		</div>
+	</div>
+</div>
+
+<nav id="main-nav" class="navbar-expand-xl fixed-top">
+	<div class="row">
+		<div class="navbar container-fluid">
+			<div class="container mh50">
+				<%= link_to home_path, class: 'navbar-brand pn', method: :get do %>
+					<%= image_tag 'LogoBigPet2.png', class: 'logo p5', size:'92' %>            
+				<% end %>               
+
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggle-icon"> <i class="fas fa-bars"></i> </span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarResponsive">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item <%= view_active?('home') %>">
+							<%= link_to 'Inicio', home_path, class: 'nav-link',  method: :get %>
+						</li>
+
+						<li class="nav-item <%= view_active?('contacts') %>">
+							<%= link_to 'Contacto', new_contact_path, class:'nav-link', method: :get %>                
+						</li>
+
+						<li class="nav-item <%= view_active?('news') %>">
+							<%= link_to 'Noticias', news_index_path, class:'nav-link', method: :get %>                
+						</li>
+
+						<li class="nav-item <%= view_active?('suggestions') %>">
+							<%= link_to 'PQRS', new_suggestion_path, class:'nav-link', method: :get %>
+						</li>
+
+						<% if signed_in? %>
+							<%= render 'layouts/admin_menu' if current_user.admin? %>
+							<%= render 'layouts/customer_menu' if current_user.customer? %>
+						<% else %>
+							<li class="nav-item <%= devise_active? %>">
+								<%= link_to new_user_session_path, class:'nav-link' do %>
+									<i class="fa fa-user fs20"></i>
+								<% end %>                   
+							</li>
+						<% end %>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</nav>

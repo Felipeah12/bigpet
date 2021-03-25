@@ -1,0 +1,58 @@
+<div class="dashboard-content">			
+  <div class="row align-items-center mt-devices">
+    <h3 class="admintitle">Productos</h3>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="form-group">
+        <%= form_with(url: user_quotes_path(current_user), local: true, method: :get, class:'form-inline d-flex justify-content-center md-form form-sm active-cyan-2 mt-2') do |form| %>
+          <%= text_field_tag :search, params[:search], class: 'form-control form-control-sm mr-3 w-75', placeholder: 'Buscar por nombre...', :'aria-label' => "Search" %>                         
+
+          <%= form.button class: 'btn-sm btn btn-primary mtn' do %>
+            <i class="fas fa-search" aria-hidden="true"></i>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <%= render 'filters' %>
+  </div>
+
+  <div class="row">			
+    <% if @brands.present? %>
+      <div class="brand-card">
+        <% @brands.each do |brand| %>
+          <figure>
+            <%= image_tag brand.image, alt: brand.name %>
+            <figcaption>
+              <%= brand.name.humanize %>
+              <small></small>
+            </figcaption>
+
+            <ul>
+              <li><%= "Precio: $#{brand.price} (gramo)" %></li>
+              <li><%= "Tipo: #{enum_kind(brand.kind_of_pet)}" %></li>
+              <li><%= "Tamaño: #{enum_size(brand.size_type)}" %></li>
+              <li><%= "Peso Kgs: #{brand.min_width}-#{brand.max_width}" %></li>
+              <li class="li-none">
+                <%= link_to new_user_quote_path(current_user, brand: brand), method: :get, class:'text-white' do %>
+                  Comprar!
+                <% end %>
+              </li>
+            </ul>
+          </figure>
+        <% end %>
+      </div>
+    <% else %>
+      <div class="col-md-12">
+        <div class="row bg-light-custom border-irregular1 p20">
+          <div class="col-sm-12 text-center">
+            <h3><%= t('brands_not_found') %></h3>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+

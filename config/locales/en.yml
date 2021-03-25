@@ -1,0 +1,279 @@
+en:
+  app: 'Bigpet'
+  welcome: 'Welcome!'
+  successful_contact: "Send successfully!. We'll contact you soon."
+  news_not_found: '¡No news available at the moment!'
+  brands_not_found: '¡No products available at the moment!'
+  notice:
+    notification: "PQRS created successfully!<br>We'll contact with you soon!"
+  size_type:
+    thumb: 'Thumb'
+    small: 'Small'
+    medium: 'Medium'
+    standard: 'Standard'
+    big: 'Big'
+    giant: 'Giant'
+  kind_of_pet:
+    little_cat: 'little cat'
+    little_dog: 'little dog'
+    cat: 'cat'
+    dog: 'dog'
+  gender:
+    male: 'male'
+    female: 'female'
+  btn:
+    create: 'Create'
+    edit: 'Edit'
+    delete: 'Delete'
+    new: 'New'
+    newf: 'New'
+    subscribe: 'Subscribe'
+    send: 'Send'
+    back: 'Back'
+    apply: 'Apply'
+    total: 'Total'
+    continue: 'Continue'
+    payment: 'Pay!'
+    update_payment: 'Update order!'
+  devise:
+    views:
+      login: 'Log in'
+      signin: 'Sign in'
+      signup: 'Sign up'
+      update_account: 'Update account!'
+      create_account: 'Sign Up!'
+      singin_with: 'Sign in with'
+      recover_password: 'Forgot your password?'
+      confirm_instructions: "Didn't receive confirmation instructions?"
+      unlock_instructions: "Didn't receive unlock instructions?"
+      password_length: '%{length} characters minimum'
+      send_instructions: 'Send me reset password instructions'
+      change_password: 'Change my password'
+      leave_blank: "Leave blank if you don't want to change it"
+      current_password: 'Wee need your current password to save the changes!'
+  mailer:
+    suggestion:
+      reply:
+        subject: 'IPQRs reply!'
+  activerecord:
+    errors:
+      too_short: 'too short!'
+      too_long: 'too long!'
+      models:
+        user:
+          attributes:
+            email:
+              invalid: 'invalid!'
+              taken: 'already exists!'
+            password_confirmation:
+              confirmation: 'and password do not match.'
+            password:
+              too_short: 'too short!'
+              blank: 'blank!'
+            current_password:
+              invalid: 'invalid!'
+        brand:
+          attributes:
+            image:
+              blank: 'not found'
+            max_width:
+              greater_than: 'should be higher to minimum width'
+        leed:
+          attributes:
+            email:
+              invalid: 'invalid!'
+        contact:
+          attributes:
+            email:
+              invalid: 'invalid!'
+        newsletter:
+          attributes:
+            image:
+              blank: 'not found'
+        suggestion:
+          attributes:
+            email:
+              invalid: 'invalid!'
+            phone:
+              invalid: 'invalid!'
+  models:
+    user: 'User'
+    brand: 'Brand'
+    contact: 'Contact'
+    leed: 'Leed'
+    order: 'Order'
+    pet: 'Pet'
+    customer: 'Customer'
+    newsletter: 'Notice'
+    suggestion: 'PQRS'
+  attributes:
+    user:
+      name: 'Name'
+      email: 'Email'
+      status: 'State'
+      role: 'Role'
+      phone: 'Phone'
+      password: 'Password'
+      address: 'Address'
+      birthdate: 'Birthdate'
+      password_confirmation: 'Password confirmation'
+      rememberme: 'Remember me'
+    leed:
+      name: 'Name'
+      email: 'Email'
+      status: 'Status'
+    brand:
+      name: 'Name'
+      size_type: 'Pet size'
+      min_width: 'Minimum width in kgs'
+      max_width: 'Maximum width in kgs'
+      min: 'Min. in kgs'
+      max: 'Max. in kgs'
+      gram_amount: 'Gram amount'
+      gram_amount: 'Grs'
+      status: 'State'
+      price: 'Price'
+      image: 'Picture'
+      kind_of_pet: 'Kind of pet'
+    contact:
+      name: 'Name'
+      email: 'Email'
+      subject: 'Subject'
+      message: 'Message'
+    order:
+      price: 'Price'
+      comment: 'Comment'
+      status: 'State'
+      delivery_date: 'Delivery date'
+      address: 'Address'
+      months: 'Months'
+    pet:
+      name: 'Name'
+      age: 'Months'
+      status: 'State'
+      kind_of_pet: 'Kind of pet'
+      gender: 'Gender'
+      weight: 'Weight in Kgs'
+      user_id: 'Customer'
+    notice:
+      title: 'Title'
+      content: 'Content'
+      image: 'Image'
+      published: 'Published'
+      unpublished: 'Unpublished'
+      status: 'Status'
+    suggestion:
+      email: 'E-mail'
+      phone: 'Phone'
+      question: 'Question'
+      reply: 'Reply'
+  messages:
+    are_you_sure: 'Are you sure to delete this record?'
+    are_you_sure_news: 'Are you sure to change the news state?'
+  errors:
+    messages:
+      not_found: 'not found'
+      not_locked: 'was not locked'
+      not_saved:
+        one: '1 error prohibited this %{resource} from being saved:'
+        other: '%{count} errors prohibited this %{resource} from being saved:'
+  date:
+    abbr_day_names:
+    - sun
+    - mon
+    - tue
+    - wen
+    - thu
+    - fri
+    - sat
+    abbr_month_names:
+    - 
+    - jan
+    - feb
+    - mar
+    - apr
+    - may
+    - jun
+    - jul
+    - aug
+    - sep
+    - oct
+    - nov
+    - dic
+    day_names:
+    - sunday
+    - monday
+    - tuesday
+    - wendnesday
+    - thursday
+    - friday
+    - saturday
+    formats:
+      default: "%-d/%-m/%Y"
+      long: "%-d of %B of %Y"
+      short: "%-d of %b"
+      human: '%B %d, %Y'
+    month_names:
+    - 
+    - january
+    - february
+    - march
+    - april
+    - may
+    - june
+    - july
+    - august
+    - september
+    - october
+    - november
+    - december
+    order:
+    - :day
+    - :month
+    - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: around 1 hour
+        other: around %{count} hours
+      about_x_months:
+        one: around 1 month
+        other: around %{count} months
+      about_x_years:
+        one: around 1 year
+        other: around %{count} years
+      almost_x_years:
+        one: almost 1 year
+        other: almost %{count} years
+      half_a_minute: half minute
+      less_than_x_seconds:
+        one: less of 1 second
+        other: less of %{count} seconds
+      less_than_x_minutes:
+        one: less of 1 minute
+        other: less of %{count} minutes
+      over_x_years:
+        one: more that one year
+        other: more that %{count} years
+      x_seconds:
+        one: 1 second
+        other: "%{count} seconds"
+      x_minutes:
+        one: 1 minute
+        other: "%{count} minutes"
+      x_days:
+        one: 1 day
+        other: "%{count} days"
+      x_months:
+        one: 1 month
+        other: "%{count} months"
+      x_years:
+        one: 1 year
+        other: "%{count} years"
+    prompts:
+      second: second
+      minute: minute
+      hour: hour
+      day: day
+      month: month
+      year: year

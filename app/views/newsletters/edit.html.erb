@@ -1,0 +1,9 @@
+<div class="dashboard-content">	
+  <div class="row align-items-center mt-devices">
+    <h3 class="admintitle">Editar Noticia</h3>
+
+    <%= link_to t('btn.back'), newsletters_path, class: 'btn btn-primary pull-right btn-sm', method: :get %>
+  </div>
+
+  <%= render 'form', btn_title: t('btn.edit') %>
+</div>

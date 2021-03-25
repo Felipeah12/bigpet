@@ -1,0 +1,43 @@
+<div class="dashboard-content">	
+  <div class="row align-items-center mt-devices">
+    <h3 class="admintitle">PQRS</h3>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12 col-md-8 offset-md-2 bg-light-custom border-irregular1 block-padding p30">
+      <div class="col-sm-10">          	
+        <div class="row">
+          <div class="col-md-6">
+            <strong><%= t('activerecord.attributes.suggestion.email') %>: </strong> <%= @suggestion.email %> 
+          </div>
+          <div class="col-md-6">
+            <strong><%= t('activerecord.attributes.suggestion.phone') %>: </strong> <%= @suggestion.phone %>
+          </div>
+          <div class="col-md-6">
+            <strong><%= t('activerecord.attributes.suggestion.question') %>: </strong> <%= @suggestion.question %>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-12">
+        <div class="form-group">
+          <%= form_with(url: suggestion_reply_suggestions_path(@suggestion), local: true, html: { class:'login' }) do |f| %>
+            <div class="row">
+              <div class="col-sm-12">
+                <label><%= t('activerecord.attributes.suggestion.reply') %> <span class="required">*</span></label>
+                <%= f.text_area :message, class: 'form-control input-field', required: true %>
+              </div>
+
+              <div class="col-md-12">
+                <%= f.submit t('btn.send'), class: 'btn btn-secondary btn-sm pull-right mh10' %>
+                <%= link_to t('btn.back'), suggestions_path, class: 'btn btn-primary pull-right btn-sm mh10', method: :get %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>

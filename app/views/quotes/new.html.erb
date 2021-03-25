@@ -1,0 +1,13 @@
+<div class="dashboard-content">	
+  <div class="row align-items-center mt-devices">
+    <h3 class="admintitle">Generar Pedido</h3>
+
+    <%= link_to t('btn.back'), user_quotes_path(current_user), class: 'btn btn-primary pull-right btn-sm', method: :get %>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <%= render 'form' %>
+    </div>
+  </div>
+</div>

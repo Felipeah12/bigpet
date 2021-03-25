@@ -1,0 +1,150 @@
+/*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
+
+.display-flex{
+  display: flex !important;
+  flex-direction: row !important;
+}
+
+.text-left{
+  text-align: left !important;
+}
+
+.flex-center{
+  justify-content: center !important;
+} 
+
+.txt-option {
+  color: white;
+  font-weight: 600;
+}
+
+.txt-white {
+  color: white !important;
+  font-weight: 400;
+}
+
+.container-social-network{
+  position: fixed;
+  width: 38px;
+  height: auto;
+  top: 220px;
+  left: -2px;
+  background: #F76B11;
+  border-radius: 0 5px 5px 0;
+  border: 1 solid white;
+  z-index: 999999;
+  -webkit-box-shadow: 2px 0px 10px -4px rgba(87,85,87,1);
+  -moz-box-shadow: 2px 0px 10px -4px rgba(87,85,87,1);
+  box-shadow: 2px 0px 10px -4px rgba(87,85,87,1);
+}
+
+.social-link{
+  display: flex;
+  flex-direction: column;
+  padding: 3px;
+}
+
+.social-link a{
+  justify-content: center;
+  margin: 1px auto;
+}
+
+.notice-content{
+  position: fixed;
+  z-index: 9999999;
+  top: 120px;
+  width: 400px;
+  margin: 0 auto;
+}
+
+.slides-content{
+  width: 1200px;
+  height:800px;
+  margin: -10px auto 0 auto;
+  padding-top: 0 !important;
+}
+
+.mt-devices{
+  margin-top: -120px !important;
+  padding-top: 10px;
+}
+
+.responsive-content{
+  width: 100%;
+  padding-top: 10px;
+  margin-top: -60px;
+  height: auto;
+}
+
+.required{
+  color: red !important;
+}
+
+.color-red{ color: red; }
+.color-green{ color: #38C5BA; }
+.color-grey{ color: #838080 !important; }
+.color-black{ color: black; }
+.txt-unline{ text-decoration: underline; }
+
+.mw-device{
+  width: 80% !important;
+  overflow: hidden;
+}
+
+.device-form{
+  min-width: 760px !important;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.pull-btn-collapsible{
+  float: right !important;
+  margin-right: 20px !important;
+}
+
+.fs18-md{ font-size: 1.2rem; }
+
+/* Tablets Responsivenes */
+@media screen and (max-width: 1000px) {
+  .mt-devices{
+    margin-top: 12% !important;
+    padding-top: 5px;
+  }
+
+  .mw-device{ width: 100% !important; }
+  .fs12-md{ font-size: 0.9rem; }
+  .fs18-md{ font-size: 0.9rem; }
+  .pull-btn-collapsible{
+    float: left !important;
+    margin-left: 10px !important;
+  }
+}
+
+/* Device Responsivenes */
+@media screen and (max-width: 500px) {
+  .responsive-content{
+    width: 100%;
+    padding-top: 30px;
+    margin-top: 60px;
+    height: auto;
+  }
+
+  .mt-devices{
+    margin-top: 28% !important;
+    padding-top: 30px;
+  }
+}

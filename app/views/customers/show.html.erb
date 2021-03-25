@@ -1,0 +1,60 @@
+<div class="dashboard-content">
+	<div class="row mt-devices">
+		<div class="col-lg-12">
+			<h4 class="admintitle">Cliente</h4>
+		</div>
+
+		<div class="col-sm-12 col-md-8 offset-md-2 bg-light-custom border-irregular1 block-padding pt20">
+			<div class="col-md-12">
+				<div class="col-lg-6 pl30">                 	
+					<div class="row">
+						<div class="col-md-12">
+							<strong><%= t('activerecord.attributes.user.email') %>:</strong>
+							<label><%= @customer.email %></label>
+						</div>
+
+						<div class="col-md-12">
+							<strong><%= t('activerecord.attributes.user.name') %>: </strong>
+							<label><%= @customer.name %></label>                          
+						</div>
+
+						<div class="col-md-12">
+							<strong><%= t('activerecord.attributes.user.phone') %>:</strong>
+							<label><%= @customer.phone %></label>
+						</div>
+
+						<div class="col-md-12">
+							<strong><%= t('activerecord.attributes.user.address') %>:</strong>
+							<label><%= @customer.address %></label>
+						</div>                           
+					</div> 
+				</div>
+
+				<% if @pets.present? %>
+					<div class="col-lg-6 res-margin text-xs-center pr20">
+						<% @pets.each do |pet| %>
+							<h4><strong><%= pet.name %></strong></h4>
+							<div class="row">
+								<div class="col-lg-12">
+									<ul class="list-unstyled pet-adopt-info">
+										<li><strong>Edad:</strong> <%= pet.age %></li>
+										<li><strong>Tipo: </strong> <%= pet.kind_of_pet %></li>
+										<li><strong>Genero: </strong> <%= pet.gender %></li>
+										<li><strong>Peso: </strong> <%= pet.weight %></li>                               
+									</ul>
+								</div>               
+							</div>
+						<% end %>
+					</div>                    
+				<% end %>
+
+				<div class="col-md-12">
+					<div class="col-md-2 pull-right">
+						<%= link_to t('activerecord.models.customer').pluralize, customers_path, class:'btn btn-primary btn-sm', method: :get %>
+					</div>
+				</div>                  
+			</div>
+		</div>
+
+	</div>
+</div>

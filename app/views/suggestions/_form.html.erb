@@ -1,0 +1,34 @@
+<div class="row bg-light-custom border-irregular1 block-padding p20">
+  <div class="col-lg-12 col-md-12 profileform">
+    <div class="form-group">
+      <%= form_with(model: @suggestion, local: true, html: { class:'login' }) do |f| %>
+        <% if @suggestion.errors.any? %>
+          <%= render 'layouts/error_messages', resource: @suggestion %>
+        <% end %>
+
+        <div class="row">
+          <div class="col-md-6">
+            <label><%= t('activerecord.attributes.suggestion.email') %> <span class="required">*</span></label>
+            <%= f.text_field :email, class: 'form-control input-field', required: true, autofocus: true %>
+          </div>
+
+          <div class="col-md-6">
+            <label><%= t('activerecord.attributes.suggestion.phone') %> <span class="required">*</span></label>
+            <%= f.number_field :phone, class: 'form-control input-field', required: true %>
+          </div>
+
+          <div class="col-md-12">
+            <label><%= t('activerecord.attributes.suggestion.question') %> <span class="required">*</span></label>
+            <%= f.text_area :question, class: 'form-control input-field', required: true %>
+          </div>
+        </div>
+
+        <div class="row mt20">
+          <div class="col-md-12">
+            <%= f.submit btn_title, class: 'btn btn-primary mt30 pull-right' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

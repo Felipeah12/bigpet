@@ -1,0 +1,68 @@
+<div class="row bg-light-custom border-irregular1 block-padding p20">
+  <div class="col-lg-12 col-md-12 profileform">
+    <div class="form-group">
+      <%= form_with(model: @brand, local: true, html: { class:'login' }) do |f| %>
+        <% if @brand.errors.any? %>
+          <%= render 'layouts/error_messages', resource: @brand %>
+        <% end %>
+
+        <div class="row">
+          <div class="col-md-6">
+            <label><%= t('activerecord.attributes.brand.name') %> <span class="required">*</span></label>
+            <%= f.text_field :name, class: 'form-control input-field', required: true, autofocus: true %>
+          </div>
+
+          <div class="col-md-6">
+            <label><%= t('activerecord.attributes.brand.size_type') %>: </label>
+            <%= f.select(:size_type, options_for_select(size_types.map{ |key, value| [value, key]}, @brand.size_type), { }, { class: 'form-control input-field' }) %> 		                          
+          </div>
+
+          <div class="col-md-6">
+            <label><%= t('activerecord.attributes.brand.kind_of_pet') %>: </label>
+            <%= f.select(:kind_of_pet, options_for_select(kind_of_pets.map{ |key, value| [value, key]}, @brand.kind_of_pet), { }, { class: 'form-control input-field' }) %> 		                          
+          </div>
+
+          <div class="col-md-6">
+            <label><%= t('activerecord.attributes.brand.min_width') %> <span class="required">*</span></label>
+            <%= f.number_field :min_width, class: 'form-control input-field', required: true %>
+          </div>
+
+          <div class="col-md-6">
+            <label><%= t('activerecord.attributes.brand.max_width') %> <span class="required">*</span></label>
+            <%= f.number_field :max_width, class: 'form-control input-field', required: true %>
+          </div>
+
+          <div class="col-md-6">
+            <label><%= t('activerecord.attributes.brand.gram_amount') %> <span class="required">*</span></label>
+            <%= f.number_field :gram_amount, class: 'form-control input-field', required: true %>
+          </div>
+
+          <div class="col-md-6">
+            <label><%= t('activerecord.attributes.brand.price') %> <span class="required">*</span></label>
+            <%= f.number_field :price, class: 'form-control input-field', required: true %>
+          </div>
+
+          <div class="col-md-6">                        
+            <label><%= t('activerecord.attributes.brand.image') %>  <span class="required">*</span></label>                          
+            <%= f.file_field :image, class: 'form-control input-field' %>
+          </div>
+        </div>
+
+        <div class="row mt20">
+          <% if @brand.image.attached? && @brand.persisted? %>
+            <div class="col-md-10">
+              <strong class="pl15">Foto Actual:</strong>
+              <div class="col-md-10 offset-1">
+                <%= (image_tag @brand.image, class:'imagebrandlistcrud m20' ) if @brand.image.attached? %>
+              </div>                                         
+            </div>
+          <% end %>
+
+          <div class="col-md-<%= @brand.image.attached? && @brand.persisted? ? 2 : 12 %>">
+            <%= f.submit btn_title, class: 'btn btn-primary mt30 pull-right' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

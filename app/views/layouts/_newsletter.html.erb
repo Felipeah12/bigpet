@@ -1,0 +1,29 @@
+<div id="call-to-action" >
+  <div class="container block-padding">
+    <div class="col-lg-6 offset-lg-6 bg-primary text-light card text-center" >
+      <h4>Suscríbete a nuestro newsletter</h4>
+      <p>
+        Quieres conocer todo sobre nuestros productos, promociones y noticias,
+        dejanos tú correo y te mantendremos informado.
+      </p>			
+			
+      <div id="mc_embed_signup">
+        <%= form_with(model: @leed, local: true, html: { class:'login' }) do |f|%>
+          <div id="mc_embed_signup_scroll">
+            <div class="mc-field-group">
+              <div class="input-group">
+                <%= f.text_field :email, class:'form-control input-lg required email', placeholder:'Correo Electrónico', required: true %>
+                <%= f.hidden_field :status, value: :newsletter %>
+                <%= f.hidden_field :name, value: :newsletter %>
+
+                <span class="input-group-btn">
+                  <%= f.submit t('btn.subscribe'), class:'btn btn-primary' %>
+                </span>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

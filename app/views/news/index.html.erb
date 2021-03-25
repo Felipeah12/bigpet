@@ -1,0 +1,27 @@
+<div class="dashboard-content dog-bg3">			
+  <div class="row align-items-center mt-devices">
+    <h2 class="admintitle">Últimas Noticias</h2>
+  </div>
+
+  <div class="row">
+    <% if @news.present? %>
+      <div class="columns-images">
+        <% @news.each do |record| %>
+          <figure>
+            <%= image_tag record.image, alt: record.title %>
+            <figcaption><%= record.title.humanize %></figcaption>
+            <small><%= record.content.humanize %></small>
+          </figure>
+        <% end %>
+      </div>
+    <% else %>
+      <div class="col-md-12">
+        <div class="row bg-light-custom border-irregular1 p20">
+          <div class="col-sm-12 text-center">
+            <h3><%= t('news_not_found') %></h3>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

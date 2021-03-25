@@ -1,0 +1,114 @@
+<section id="services" class="cat-bg3 pt30">
+  <div class="container">
+    <div class="section-heading text-center">
+      <h2>Como Adquirir</h2>
+    </div>
+
+    <div class="container block-padding pt-0">
+      <div class="row">
+        <div class="col-xl-6">
+          <h3>Lo mejor para tú Mascota!</h3>
+          <p>
+            Despreocupate no tienes que volver a comprar todos los meses la comida para tú mascota,
+            con nuestros planes escoges una vez lo que deseas y todos los meses te garantizaremos que 
+            te entregamos en la puerta de tú casa la comida de tú mascota, mas facil, muy practico, 
+            para que disfrutes a quien mas te quiere.
+          </p>
+
+          <ul class="custom pl-0">
+            <li>Las marcas que ya conoces.</li>
+            <li>Al mejor precio.</li>
+            <li>En la puerta de tú casa.</li>
+            <li>Porcionado y separado por semanas.</li>
+          </ul>
+        </div>
+
+        <div class="col-xl-6">
+          <%= image_tag 'dog.jpg', class: 'img-fluid border-irregular1 border-double'  %>                     
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-light-custom block-padding border-irregular1">
+      <div id="owl-services" class="container owl-carousel owl-theme">                  
+        <div class="col-md-12">
+          <div class="serviceBox">
+            <div class="service-icon">
+              <i class="flaticon-pet"></i>
+            </div>
+            <div class="service-content">
+              <h6>Selecciona mascota</h6>
+              <p>Perro o Gato, selecciona la raza de tú mascota.</p>
+              <% link_to 'Iniciar', '#', class: 'btn btn-primary', method: :get %>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12">
+          <div class="serviceBox">
+            <div class="service-icon">
+              <i class="flaticon-animals-2"></i>
+            </div>
+            <div class="service-content">
+              <h6>Selecciona tamaño</h6>
+              <p> Selecciona el tamaño o la catidad de mascotas.</p>
+              <% link_to 'Selecciona', '#', class: 'btn btn-primary', method: :get %>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12">
+          <div class="serviceBox">
+            <div class="service-icon">
+              <i class="flaticon-dog-training-1"></i>
+            </div>
+            <div class="service-content">
+              <h6>Selecciona marca</h6>
+              <p>Escoge la marca que ya conoces al mejor precio.</p>
+              <% link_to 'Selecciona', '#', class: 'btn btn-primary', method: :get %>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12">
+          <div class="serviceBox">
+            <div class="service-icon">
+              <i class="flaticon-people-1"></i>
+            </div>
+            <div class="service-content">
+              <h6>Crear cuenta</h6>
+              <p>Crea tú cuenta y empieza a disfrutas de los beneficios.</p>
+              <% link_to 'Crear cuenta', '#', class: 'btn btn-primary', method: :get %>
+            </div>
+          </div>
+        </div>
+				
+        <div class="col-md-12">
+          <div class="serviceBox">
+            <div class="service-icon">
+              <i class="flaticon-pet-shelter"></i>
+            </div>
+            <div class="service-content">
+              <h6>Ingresa tú dirección</h6>
+              <p>Indicanos donde quieres recibir mensualmente tú pedido.</p>
+              <% link_to 'Ingresar', '#', class: 'btn btn-primary', method: :get %>                     
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12">
+          <div class="serviceBox">
+            <div class="service-icon">
+              <i class="flaticon-dog-training-3"></i>
+            </div>
+            <div class="service-content">
+                <h6>Confirma pedido</h6>
+                <p>Confirma tú pedido, coordinaremos el pago contigo.</p>
+                <% link_to 'Confirmar', '#', class: 'btn btn-primary', method: :get %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,31 @@
+<div class="dashboard-content">	
+  <div class="row align-items-center mt-devices">
+    <h3 class="admintitle">Noticia</h3>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12 col-md-8 offset-md-2 bg-light-custom border-irregular1 block-padding p30">
+      <div class="col-lg-12">              	
+        <div class="row">
+          <div class="col-md-6">
+            <strong><%= t('activerecord.attributes.newsletter.title') %>: </strong> <%= @newsletter.title %> 
+          </div>
+          <div class="col-md-6">
+            <strong><%= t('activerecord.attributes.newsletter.content') %>: </strong> <%= @newsletter.content %>
+          </div>
+        </div>
+
+        <div class="row mt20">
+          <strong class="pl15">Foto:</strong>
+          <div class="col-md-12 display-flex">
+            <%= (image_tag @newsletter.image, class:'imagebrandlistcrud m20' ) if @newsletter.image.attached? %>
+          </div>                                         
+        </div>
+      </div>
+
+      <div class="col-sm-12">
+        <%= link_to t('btn.back'), newsletters_path, class: 'btn btn-primary pull-right btn-sm', method: :get %>
+      </div>
+    </div>
+  </div>
+</div>

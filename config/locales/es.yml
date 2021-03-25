@@ -1,0 +1,280 @@
+es:
+  app: 'Bigpet'
+  welcome: 'Bienvenido!'
+  successful_contact: 'Mensaje enviado exitosamente!. Muy pronto nos comunicaremos contigo.'
+  news_not_found: '¡Por el momento no hay noticias disponibles!'
+  brands_not_found: '¡Por el momento no hay productos disponibles!'
+  notice:
+    notification: 'PQRS creado exitosamente!<br>Pronto nos comunicaremos contigo!'
+  size_type:
+    thumb: 'Mini'
+    small: 'Pequeño'
+    medium: 'Mediano'
+    standard: 'Estandar'
+    big: 'Grande'
+    giant: 'Gigante'
+  kind_of_pet:
+    little_cat: 'Gato pequeño'
+    little_dog: 'Perro pequeño'
+    cat: 'Gato'
+    dog: 'Perro'
+  gender:
+    male: 'Hembra'
+    female: 'Macho'
+  btn:
+    create: 'Crear'
+    edit: 'Editar'
+    delete: 'Eliminar'
+    new: 'Nuevo'
+    newf: 'Nueva'
+    subscribe: 'Suscríbete'
+    send: 'Enviar'
+    back: 'Volver'
+    apply: 'Aplicar'
+    total: 'Total'
+    continue: 'Continuar'
+    payment: 'Realizar pago!'
+    update_payment: 'Actualizar Pedido!'
+  devise:
+    views:
+      login: 'Iniciar sesión'
+      signin: 'Ingresar'
+      signup: 'Registrarse'
+      update_account: 'Actualizar cuenta!'
+      create_account: 'Crear cuenta!'
+      singin_with: 'Inicia sesión con'
+      recover_password: 'Olvidaste tu contraseña?'
+      confirm_instructions: "No recibiste las instrucciones de confirmación?"
+      unlock_instructions: "No recibiste las instrucciones de desbloqueo?"
+      password_length: '%{length} caracteres mínimo.'
+      send_instructions: 'Enviarme instrucciones para recuperar contraseña!'
+      change_password: 'Cambiar mi contraseña'
+      leave_blank: 'Deja vacío el campo si no vas actualizar la contraseña!'
+      current_password: 'Necesitamos tu contraseña actual para confirmar los cambios!'
+  mailer:
+    suggestion:
+      reply:
+        subject: 'Respuesta de tú PQRS!'
+  activerecord:
+    errors:
+      too_short: 'muy corto!'
+      too_long: 'muy largo!'
+      models:
+        user:
+          attributes:
+            email:
+              invalid: 'invalido!'
+              taken: 'ya tiene una cuenta asignada!'
+            password_confirmation:
+              confirmation: 'y contraseña no coinciden!'
+            password:
+              too_short: 'muy corta!'
+              blank: 'no ingresada!'
+            current_password:
+              invalid: 'invalida!'
+        brand:
+          attributes:
+            image:
+              blank: 'no ingresada'
+            max_width:
+              greater_than: 'debe ser mayor al peso mínimo'
+        leed:
+          attributes:
+            email:
+              invalid: 'invalido!'
+        contact:
+          attributes:
+            email:
+              invalid: 'invalido!'
+        newsletter:
+          attributes:
+            image:
+              blank: 'no ingresada'
+        suggestion:
+          attributes:
+            email:
+              invalid: 'invalido!'
+            phone:
+              invalid: 'invalido!'
+    models:
+      user: 'Usuario'
+      brand: 'Marca'
+      contact: 'Contacto'
+      leed: 'Prospecto'
+      order: 'Orden'
+      pet: 'Mascota'
+      customer: 'Cliente'
+      newsletter: 'Noticia'
+      suggestion: 'PQRS'
+    attributes:
+      user:
+        name: 'Nombre'
+        email: 'Correo electrónico'
+        status: 'Estado'
+        role: 'Rol'
+        phone: 'Teléfono'
+        password: 'Contraseña'
+        address: 'Dirección'
+        birthdate: 'Cumpleaños'
+        password_confirmation: 'Confirmar contraseña'
+        rememberme: 'Recordarme'
+        current_password: 'Contraseña actual'
+      leed:
+        name: 'Nombre'
+        email: 'Correo electrónico'
+        status: 'Estado'
+      brand:
+        name: 'Nombre'
+        size_type: 'Tamaño mascota'
+        min_width: 'Peso mínimo en kgs'
+        max_width: 'Peso máximo en kgs'
+        min: 'Mín. kgs'
+        max: 'Máx. kgs'
+        gram_amount: 'Cantidad en gramos'
+        gram: 'Cantidad Grs'
+        status: 'Estado'
+        price: 'Precio'
+        image: 'Foto'
+        kind_of_pet: 'Tipo de mascota'
+      contact:
+        name: 'Nombre'
+        email: 'Correo electrónico'
+        subject: 'Asunto'
+        message: 'Mensaje'
+      order:
+        price: 'Precio'
+        comment: 'Comentario'
+        status: 'Estado'
+        delivery_date: 'Fecha de entrega'
+        address: 'Dirección'
+        months: 'Meses'
+      pet:
+        name: 'Nombre'
+        age: 'Meses'
+        status: 'Estado'
+        kind_of_pet: 'Tipo de mascota'
+        gender: 'Genero'
+        weight: 'Peso en Kgs'
+        user_id: 'Cliente'
+      newsletter:
+        title: 'Título'
+        content: 'Contenido'
+        image: 'Imagen'
+        published: 'Publicada'
+        unpublished: 'No publicada'
+        status: 'Estado'
+      suggestion:
+        email: 'Correo electrónico'
+        phone: 'Teléfono'
+        question: 'Pregunta'
+        reply: 'Responder'
+  messages:
+    are_you_sure: 'Estás seguro de eliminar el registro?'
+    are_you_sure_news: 'Estás seguro de cambiar el estado de la noticia?'
+  errors:
+    messages:
+      not_found: 'no encontrado'
+      not_locked: 'no fue desbloqueado'
+      not_saved:
+        one: '1 error que no permite almacenar los cambios:'
+        other: '%{count} errores que no permiten almacenar los datos:'
+  date:
+    abbr_day_names:
+    - dom
+    - lun
+    - mar
+    - mié
+    - jue
+    - vie
+    - sáb
+    abbr_month_names:
+    - 
+    - ene
+    - feb
+    - mar
+    - abr
+    - may
+    - jun
+    - jul
+    - ago
+    - sep
+    - oct
+    - nov
+    - dic
+    day_names:
+    - domingo
+    - lunes
+    - martes
+    - miércoles
+    - jueves
+    - viernes
+    - sábado
+    formats:
+      default: "%-d/%-m/%Y"
+      long: "%-d de %B de %Y"
+      short: "%-d de %b"
+      human: '%B %d, %Y'
+    month_names:
+    - 
+    - Enero
+    - Febrero
+    - Marzo
+    - Abril
+    - Mayo
+    - Junio
+    - Julio
+    - Agosto
+    - Septiembre
+    - Octubre
+    - Noviembre
+    - Diciembre
+    order:
+    - :day
+    - :month
+    - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: alrededor de 1 hora
+        other: alrededor de %{count} horas
+      about_x_months:
+        one: alrededor de 1 mes
+        other: alrededor de %{count} meses
+      about_x_years:
+        one: alrededor de 1 año
+        other: alrededor de %{count} años
+      almost_x_years:
+        one: casi 1 año
+        other: casi %{count} años
+      half_a_minute: medio minuto
+      less_than_x_seconds:
+        one: menos de 1 segundo
+        other: menos de %{count} segundos
+      less_than_x_minutes:
+        one: menos de 1 minuto
+        other: menos de %{count} minutos
+      over_x_years:
+        one: más de 1 año
+        other: más de %{count} años
+      x_seconds:
+        one: 1 segundo
+        other: "%{count} segundos"
+      x_minutes:
+        one: 1 minuto
+        other: "%{count} minutos"
+      x_days:
+        one: 1 día
+        other: "%{count} días"
+      x_months:
+        one: 1 mes
+        other: "%{count} meses"
+      x_years:
+        one: 1 año
+        other: "%{count} años"
+    prompts:
+      second: Segundo
+      minute: Minuto
+      hour: Hora
+      day: Día
+      month: Mes
+      year: Año

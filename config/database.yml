@@ -1,0 +1,34 @@
+# frozen_string_literal: true
+
+# PostgreSQL. Versions 9.3 and up are supported.
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  port: <%= ENV['POSTGRESQL_PORT'] || 5432 %>
+  host: <%= ENV['POSTGRESQL_HOST'] || 'localhost' %>
+  timeout: <%= ENV['POSTGRESQL_TIMEOUT'] || 5 %>
+  database: <%= ENV['POSTGRESQL_DATABASE'] || 'bigpet_dev' %>
+  username: <%= ENV['POSTGRESQL_USERNAME'] || 'postgres' %>
+  password: <%= ENV['POSTGRESQL_PASSWORD'] %>
+
+development:
+  <<: *default
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+# test:
+#   <<: *default
+#   database: bigpet_test
+
+# You can use this database configuration with:
+#
+#   production:
+#     url: <%= ENV['DATABASE_URL'] %>
+# #
+production:
+  <<: *default
+  database: <%= ENV['POSTGRESQL_DATABASE'] %>
+  username: <%= ENV['POSTGRESQL_USERNAME'] %>
+  password: <%= ENV['POSTGRESQL_PASSWORD'] %>

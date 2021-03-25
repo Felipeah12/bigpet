@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col s12">
+    <div class="card red darken-2">
+      <div class="card-content white-text pt5">
+        <span class="card-title">
+          <span class="fs20">
+            <%= I18n.t("errors.messages.not_saved",
+                      count: resource.errors.count,
+                      resource: resource.class.model_name.human.downcase)
+            %>
+          </span>
+        </span>
+        <ul>
+          <% resource.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

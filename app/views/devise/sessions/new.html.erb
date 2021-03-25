@@ -1,0 +1,56 @@
+<section id="contact" class="dog-bg3">
+  <div class="container">
+    <div class="row">
+      <% if flash[:notice] %>
+        <div class="col-md-12">						
+          <div class="alert alert-success" role="alert">
+            <p><%= flash[:notice].html_safe %></p>
+          </div>
+        </div>
+      <% end %>
+
+      <div class="contact-info col-lg-8 offset-2 card bg-light-custom ptn">
+        <div class="container">
+          <div class="section-heading text-center mb20">
+            <h2 class="mb5"><%= t('welcome') %></h2>
+            <h5 class="mb5"><%= t('devise.views.login') %></h5>
+          </div>
+        </div>
+
+        <div id="contact_form" class="pb10">
+          <div class="form-group">
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: 'login') do |f| %>
+              <div class="row">                           
+                <div class="col-md-12">
+                  <label><%= t('activerecord.attributes.user.email') %> <span class="required color-red">*</span></label>
+                  <%= f.email_field :email, class:'form-control input-field', required: true, autocomplete: 'off', autofocus: true %>
+                </div>
+
+                <div class="col-md-12">
+                  <label><%= t('activerecord.attributes.user.password') %> <span class="required color-red">*</span></label>
+                  <%= f.password_field :password, class:'form-control input-field', required: true, autocomplete: 'current-password' %>
+                </div>                           
+
+                <% if devise_mapping.rememberable? %>
+                  <div class="col-md-12">
+                    <div class="form-check-inline pt5">
+                      <%= f.check_box :remember_me, class:'form-check-input' %>
+                      <label class="form-check-label pl10"><%= t('activerecord.attributes.user.rememberme') %> </label>
+                    </div>
+                  </div>
+                <% end %>
+
+                <div class="col-lg-12">
+                  <%= f.submit t('devise.views.login'), class:'btn btn-primary float-right btn-sm' %>
+                </div>
+              </div>
+            <% end %>
+          </div>                     
+        </div>
+        
+        <%= render "devise/shared/links" %>         
+      </div>
+
+    </div>        
+  </div>
+</section>

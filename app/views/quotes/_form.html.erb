@@ -1,0 +1,85 @@
+<div class="row bg-light-custom border-irregular1 block-padding p20">
+  <div class="col-lg-12 col-md-12 profileform">
+    <div class="form-group">
+      <%= form_with(model: [current_user, @order], local: true, html: { class:'login' }) do |f| %>
+        <% if @order.errors.any? %>
+          <%= render 'layouts/error_messages', resource: @order %>
+        <% end %>
+
+        <div class="row">
+          <div class="col-xs-12 col-md-2">
+            <% if @brand.image.attached? %>
+              <div class="col-md-12">
+                <%= image_tag @brand.image, alt: 'img', class:'rounded-circle', size: '180x200' %>
+              </div>
+            <% end %>
+          </div>
+
+          <div class="col-xs-12 col-md-10 pl20">
+            <div class="col-xs-12 col-md-6"><div class="pv20"></div></div>
+            <div class="col-xs-12 col-md-6">
+              <strong class="fs18"><%= t('activerecord.attributes.order.delivery_date') %>: </strong>
+              <span class="fs18 border-date"><%= I18n.l(@order.delivery_date, format: :human) %></span> 
+            </div>
+            <div class="col-xs-12 col-md-6">
+              <strong><%= t('activerecord.attributes.brand.name') %>: </strong> <%= @brand.name %> 
+            </div>
+            <div class="col-xs-12 col-md-6">
+              <strong><%= t('activerecord.attributes.brand.price') %>: </strong> $ <%= @brand.price %>
+            </div>
+            <div class="col-xs-12 col-md-6">
+              <strong><%= t('activerecord.attributes.brand.kind_of_pet') %>: </strong> <%= enum_kind(@brand.kind_of_pet) %>
+            </div>
+            <div class="col-xs-12 col-md-6">
+              <strong><%= t('activerecord.attributes.brand.gram_amount') %>: </strong> <%= @brand.gram_amount %>
+            </div>
+          </div>
+
+          <%= hidden_field_tag :brand_id, '', class:' ', value: @brand.id %>
+          <%= hidden_field_tag :brand_price, '', class:' ', value: @brand.price %>
+          <%= hidden_field_tag :brand_gram_amount, '', class:' ', value: @brand.gram_amount %>
+
+          <div class="col-xs-12 col-md-6">
+            <label>
+              <%= t('activerecord.attributes.order.address') %>
+              <small>(Verificá tu dirección de destino.)</small>
+              <span class="required">*</span>
+            </label>
+            <%= f.text_field :address, class: 'form-control input-field', required: true, autofocus: true %>
+          </div>
+
+          <div class="col-xs-12 col-md-6">
+            <label> Meses <small>(30 días de alimento por mes.)</small> <span class="required">*</span></label>
+            <%= f.number_field :months, class: 'form-control input-field', required: true, min: 1, step: 1 %>
+          </div>
+
+          <% if current_user.pets.present? %>
+            <div class="col-xs-12 col-md-6">
+              <label><%= t('activerecord.attributes.pet.name') %> de tú mascota: </label>
+              <%= select_tag(:pet_id, options_for_select(current_user.pets.map{ |pet| [pet.name, pet.id]}, params[:pet_id]), { class: 'form-control input-field' }) %> 		                          
+            </div>
+          <% end %>
+
+          <div class="col-xs-12 col-md-6">
+            <label><%= t('btn.total') %> <span class="required">*</span></label>
+            <%= f.number_field :price, class: 'form-control input-field', readonly: true  %>
+          </div>
+
+          <div class="col-md-12">
+            <label>
+              <%= t('activerecord.attributes.order.comment') %>
+              <small>(Relacionado a la ubicación, casa, entrega, etc.)</small>
+            </label>
+            <%= f.text_area :comment, class: 'textarea-field form-control' %>
+          </div>
+        </div>
+
+        <div class="row mt20">
+          <div class="col-md-12">
+            <%= f.submit t('btn.continue'), class: 'btn btn-primary mt30 pull-right' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

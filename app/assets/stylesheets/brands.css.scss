@@ -1,0 +1,122 @@
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.collapsible {
+  background-color: #FF8B1E;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  width: 100%;
+  margin: 0px auto;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  border-radius: 6px 6px 0px 0px;
+}
+
+.active-filters, .collapsible:hover {
+  background-color: #38C5BA;
+}
+
+.content-filters {
+  width: 100%;
+  padding: 0 18px;
+  max-height: 0;
+  overflow: scroll;
+  margin: 0px auto 20px auto;
+  transition: max-height 0.2s ease-out;
+  background-color: #F6F6F6;
+  border-radius: 0px 0px 6px 6px;
+}
+
+.brand-card {
+  column-width: 220px;
+  column-gap: 15px;
+  width: 90%;
+  max-width: 1100px;
+  margin: 0px auto 30px auto;
+}
+
+.border-date{
+  border-bottom: 2px solid #38C5BA;
+}
+
+div.brand-card figure {
+  background: #38C5BA;
+  border: 2px solid #38C5BA;
+  margin: 0 2px 15px;
+  padding: 15px;
+  padding-bottom: 10px;
+  transition: opacity .4s ease-in-out;
+  display: inline-block;
+  column-break-inside: avoid;
+  border-radius: 6px;
+  -webkit-box-shadow: 1px 0px 8px -2px rgba(87,85,87,1);
+  -moz-box-shadow: 1px 0px 8px -2px rgba(87,85,87,1);
+  box-shadow: 1px 0px 8px -2px rgba(87,85,87,1);
+}
+
+div.brand-card figure img {
+  width: 100%;
+  height: 240px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+}
+
+div.brand-card figure figcaption {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #FFF;
+  line-height: 1.5;
+  border-top: 2px solid #FEFEFE;
+  border-bottom: 1px solid #FEFEFE;
+}
+
+div.brand-card figure figcaption small {
+  font-size: 1.1rem;
+  float: right; 
+  color: #FFF;
+  border-bottom: 4px solid #FEFEFE;
+  padding-top: 2px;
+}
+
+div.brand-card figure ul{
+  margin: 5px 0px 2px 0px;
+  padding-top: 2px;
+  padding-left: 15px;
+}
+
+div.brand-card figure ul li{
+  font-size: 1rem;
+  color: #FFF;
+}
+
+.li-none{
+  padding-top: 3px;
+  list-style-type: none !important;
+  float: right;
+  font-weight: 800;
+  border-bottom: 1px solid white;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 750px) { 
+  .brand-card {
+    column-width: 210px;
+    column-gap: 30px;
+    width: 70%;
+    max-width: 500px;
+  }
+
+  .brand-card figure { width: 90%; }
+}

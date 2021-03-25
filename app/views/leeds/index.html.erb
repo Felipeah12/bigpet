@@ -1,0 +1,26 @@
+<div class="dashboard-content">			
+	<div class="row align-items-center mt-devices">
+		<div class="col-lg-12">
+			<h3 class="admintitle"><%= t('activerecord.models.leed').pluralize %></h3>
+		</div>
+	</div>
+
+	<div class="row">			
+		<table class="table table-striped table-hover table-sm">
+			<thead>
+				<tr>
+					<th><%= t('activerecord.attributes.leed.name') %></th>
+					<th><%= t('activerecord.attributes.leed.email') %></th>
+				</tr>
+			</thead>
+			<tbody>                     
+				<% @leeds.each do |leed| %>
+					<tr>
+						<td><%= leed.name %></td>
+						<td><%= leed.email %></td>
+					</tr>
+				<% end %>				                   
+			</tbody>
+		</table>
+	</div>
+</div>

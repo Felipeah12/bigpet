@@ -1,0 +1,55 @@
+<div class="dashboard-content">			
+  <div class="row align-items-center mt-devices">
+    <div class="col-lg-10">
+      <h2 class="admintitle">Mis Mascotas</h2>
+    </div>
+
+    <div class="col-lg-2">
+      <%= link_to new_user_pet_path(@user), class: 'btn btn-primary btn-sm pull-right', method: :get do %>
+        Nueva Mascota
+      <% end %>	
+    </div>
+  </div>
+
+  <div class="row">			
+    <div class="col-md-12" style="overflow-x:auto;">
+      <table class="table table-striped table-hover table-sm">
+        <thead>
+          <tr>
+            <th><%= t('activerecord.attributes.pet.name') %></th>
+            <th><%= t('activerecord.attributes.pet.gender') %></th>
+            <th><%= t('activerecord.attributes.pet.age') %></th>
+            <th><%= t('activerecord.attributes.pet.kind_of_pet') %></th>
+            <th><%= t('activerecord.attributes.pet.weight') %></th>
+            <th colspan="2"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @pets.each do |pet| %>
+            <tr>
+              <td><%= pet.name %></td>
+              <td><%= enum_gender(pet.gender) %></td>
+              <td><%= pet.age %></td>
+              <td><%= enum_kind(pet.kind_of_pet) %></td>
+              <td><%= pet.weight %></td>
+
+              <td colspan="2">
+                <%= link_to [@user, pet], class:'', method: :get do %>
+                  <i class="fa fa-arrow-circle-right fs24 ph5"></i>
+                <% end %>
+
+                <%= link_to edit_user_pet_path(@user, pet), class:'', method: :get do %>
+                  <i class="fa fa-pencil fs24 ph5"></i>
+                <% end %>
+
+                <%= link_to [@user, pet], class:'', method: :delete, data: { confirm: t('messages.are_you_sure') }  do %>
+                  <i class="fa fa-trash fs24 ph5"></i>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>				                   
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

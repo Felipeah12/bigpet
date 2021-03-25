@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title_app %></title>
+    <%= render 'layouts/resources' %>
+  </head>
+
+  <body id="top">
+    <%= render "layouts/header" %>
+    <%= render 'layouts/notice', notice: flash[:notice] %>
+    <%= yield %>
+    <%= render "layouts/footer" %>
+
+    <%= render 'layouts/social_networks' %>
+  </body>
+</html>
